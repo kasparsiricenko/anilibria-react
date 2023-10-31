@@ -8,7 +8,7 @@ const Releases = () => {
   const { cx, classes } = useStyles();
   const { isLoading, error, data } = useQuery(
     QUERIES.RELEASES,
-    createQuery({ name: APIS_BY_QUERY[QUERIES.RELEASES] })
+    createQuery({ name: APIS_BY_QUERY[QUERIES.RELEASES] }),
   );
 
   if (isLoading) return "Loading...";

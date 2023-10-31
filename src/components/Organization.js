@@ -12,7 +12,7 @@ const Organization = () => {
     data: organization,
   } = useQuery(
     QUERIES.ORGANIZATION,
-    createQuery({ name: APIS_BY_QUERY[QUERIES.ORGANIZATION] })
+    createQuery({ name: APIS_BY_QUERY[QUERIES.ORGANIZATION] }),
   );
 
   if (isLoading) return "Loading...";

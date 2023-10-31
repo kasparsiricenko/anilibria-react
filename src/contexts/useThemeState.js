@@ -53,7 +53,7 @@ export const ThemeStateProvider = ({ children }) => {
   const doesSystemPreferDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   const [theme, setTheme] = React.useState(() =>
-    getTheme(themeState, doesSystemPreferDark)
+    getTheme(themeState, doesSystemPreferDark),
   );
 
   React.useEffect(() => {
@@ -69,7 +69,7 @@ export const ThemeStateProvider = ({ children }) => {
 
   const value = React.useMemo(
     () => ({ themeState, setThemeState }),
-    [themeState]
+    [themeState],
   );
 
   return (
