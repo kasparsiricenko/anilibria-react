@@ -1,18 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProfileView from "./views/ProfileView";
+import SignUpView from "./views/SignUpView";
+import SignInView from "./views/SignInView";
+import MainView from "./views/MainView";
+import { ThemeStateProvider } from "./contexts/useThemeState";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeStateProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainView />} />
+            <Route path="/sign-in" element={<SignInView />} />
+            <Route path="/sign-up" element={<SignUpView />} />
+            <Route path="/profile" element={<ProfileView />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeStateProvider>
+    </QueryClientProvider>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <App />
   </React.StrictMode>
 );
 
