@@ -1,9 +1,3 @@
-#root,
-html,
-body {
-  margin: 0;
-}
-
 html {
   font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,18 +7,13 @@ html {
 }
 
 .font-noto {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans";
 }
 
 .font-oswald {
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald";
 }
 
 .font-philosopher {
-  font-family: "Philosopher", sans-serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Philosopher";
 }

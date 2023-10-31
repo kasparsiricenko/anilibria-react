@@ -9,6 +9,7 @@ import SignUpView from "./views/SignUpView";
 import SignInView from "./views/SignInView";
 import MainView from "./views/MainView";
 import { ThemeStateProvider } from "./contexts/useThemeState";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,14 +23,17 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeStateProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainView />} />
-            <Route path="/sign-in" element={<SignInView />} />
-            <Route path="/sign-up" element={<SignUpView />} />
-            <Route path="/profile" element={<ProfileView />} />
-          </Routes>
-        </BrowserRouter>
+        <React.Fragment>
+          <CssBaseline enableColorScheme />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<MainView />} />
+              <Route path="/sign-in" element={<SignInView />} />
+              <Route path="/sign-up" element={<SignUpView />} />
+              <Route path="/profile" element={<ProfileView />} />
+            </Routes>
+          </BrowserRouter>
+        </React.Fragment>
       </ThemeStateProvider>
     </QueryClientProvider>
   );
