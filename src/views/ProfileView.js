@@ -4,7 +4,7 @@ import usePageTitle from "../hooks/usePageTitle";
 
 const ProfileView = () => {
   const { classes } = useStyles();
-  usePageTitle(TITLES[VIEWS.PROFILE]);
+  usePageTitle(VIEWS.PROFILE);
 
   return (
     <div className={classes.root}>

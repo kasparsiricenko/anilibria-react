@@ -9,7 +9,7 @@ import usePageTitle from "../hooks/usePageTitle";
 const ResetPassword = () => {
   const { classes, cx } = useStyles();
   const { setAuth } = useAuth();
-  usePageTitle(TITLES[VIEWS.RESET_PASSWORD]);
+  usePageTitle(VIEWS.RESET_PASSWORD);
 
   const [formData, setFormData] = React.useState({
     email: "",

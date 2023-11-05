@@ -4,7 +4,7 @@ import { TITLES, VIEWS } from "../config";
 
 const SignUpView = () => {
   const { classes } = useStyles();
-  usePageTitle(TITLES[VIEWS.SIGN_UP]);
+  usePageTitle(VIEWS.SIGN_UP);
 
   return (
     <div className={classes.root}>

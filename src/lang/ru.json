@@ -1,0 +1,15 @@
+{
+  "sign-in": "Войти",
+  "sign-up": "Зарегистрироваться",
+  "sign-out": "Выйти",
+  "email": "Эл. почта",
+  "password": "Пароль",
+  "forgot-password": "Забыли пароль?",
+  "reset-password": "Сбросить пароль",
+  "profile": "Профиль",
+  "dont-have-account": "Нет аккаунта?",
+  "create-account": "Создать аккаунт",
+  "contact-me-on-telegram": "Свяжитесь со мной в Telegram:",
+  "project-a": "ПРОЕКТ A",
+  "personal-project-a": "ПЕРСОНАЛЬНЫЙ ПРОЕКТ A."
+}

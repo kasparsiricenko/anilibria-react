@@ -1,0 +1,15 @@
+{
+  "sign-in": "Sign In",
+  "sign-up": "Sign Up",
+  "sign-out": "Log Out",
+  "email": "Email",
+  "password": "Password",
+  "forgot-password": "Forgot Password?",
+  "reset-password": "Reset Password",
+  "profile": "Profile",
+  "dont-have-account": "Don't have an account?",
+  "create-account": "Create account",
+  "contact-me-on-telegram": "Contact me on Telegram:",
+  "project-a": "PROJECT A",
+  "personal-project-a": "PERSONAL PROJECT A."
+}

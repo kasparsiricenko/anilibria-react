@@ -7,11 +7,13 @@ import usePageTitle from "../hooks/usePageTitle";
 import { TITLES, VIEWS } from "../config";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const SignInView = () => {
+  usePageTitle(VIEWS.SIGN_IN);
   const { classes, cx } = useStyles();
   const { setAuth } = useAuth();
-  usePageTitle(TITLES[VIEWS.SIGN_IN]);
+  const { formatMessage } = useIntl();
 
   const [formData, setFormData] = React.useState({
     email: "",
@@ -23,7 +25,7 @@ const SignInView = () => {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const onChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -45,7 +47,7 @@ const SignInView = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
@@ -58,20 +60,22 @@ const SignInView = () => {
       <Header hasBackButton={false} hasSearchField={false} hasProfile={false} />
       <Container component="main" maxWidth="xl" className={classes.root}>
         <Container maxWidth="xs">
-          <h1 className={classes.title}>Sign In</h1>
-          <form onSubmit={handleSubmit}>
+          <h1 className={classes.title}>
+            <FormattedMessage id="sign-in" />
+          </h1>
+          <form onSubmit={onSubmit}>
             <TextField
               fullWidth
-              label="Email"
+              label={formatMessage({ id: "email" })}
               name="email"
               type="email"
               variant="outlined"
               value={formData.email}
-              onChange={handleChange}
+              onChange={onChange}
               error={Boolean(errors.email)}
               helperText={errors.email}
               className={classes.field}
-              autoComplete="username"
+              autoComplete="email"
               inputProps={{ className: classes.fieldInput }}
               InputLabelProps={{
                 shrink: true,
@@ -79,12 +83,12 @@ const SignInView = () => {
             />
             <TextField
               fullWidth
-              label="Password"
+              label={formatMessage({ id: "password" })}
               name="password"
               type="password"
               variant="outlined"
               value={formData.password}
-              onChange={handleChange}
+              onChange={onChange}
               error={Boolean(errors.password)}
               helperText={errors.password}
               className={classes.field}
@@ -101,7 +105,7 @@ const SignInView = () => {
                   underline="always"
                   className={classes.link}
                 >
-                  Forgot password?
+                  <FormattedMessage id="forgot-password" />
                 </MuiLink>
               </RouterLink>
             </p>
@@ -111,19 +115,19 @@ const SignInView = () => {
               color="primary"
               className={classes.button}
             >
-              Sign In
+              <FormattedMessage id="sign-in" />
             </Button>
             <p
               className={cx(classes.paragraph, classes.createAccountParagraph)}
             >
-              Don’t have an account?
+              <FormattedMessage id="dont-have-account" />
               <RouterLink to="/sign-up" replace>
                 <MuiLink
                   component="span"
                   underline="always"
                   className={cx(classes.link, classes.createAccountLink)}
                 >
-                  Create Account
+                  <FormattedMessage id="create-account" />
                 </MuiLink>
               </RouterLink>
             </p>

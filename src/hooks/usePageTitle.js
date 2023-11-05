@@ -1,9 +1,17 @@
 import React from "react";
 import { ANILIBRIA_TITLE } from "../config";
+import { useIntl } from "react-intl";
 
 const usePageTitle = (title) => {
+  const { formatMessage } = useIntl();
+
   React.useEffect(() => {
-    document.title = [title, ANILIBRIA_TITLE].filter(Boolean).join(" - ");
+    document.title = [
+      title && formatMessage({ id: title }),
+      formatMessage({ id: ANILIBRIA_TITLE }),
+    ]
+      .filter(Boolean)
+      .join(" - ");
   }, [title]);
 };
 

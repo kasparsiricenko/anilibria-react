@@ -6,7 +6,7 @@ import { TITLES, VIEWS } from "../config";
 
 const MainView = () => {
   const { classes } = useStyles();
-  usePageTitle(TITLES[VIEWS.MAIN]);
+  usePageTitle(VIEWS.MAIN);
 
   return (
     <main className={classes.root}>

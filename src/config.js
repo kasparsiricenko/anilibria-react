@@ -9,7 +9,7 @@ export const APIS_BY_QUERY = {
   [QUERIES.ORGANIZATION]: "teams",
 };
 
-export const ANILIBRIA_TITLE = "PROJECT A";
+export const ANILIBRIA_TITLE = "project-a";
 
 export const VIEWS = {
   MAIN: "main",
@@ -17,14 +17,6 @@ export const VIEWS = {
   SIGN_UP: "sign-up",
   PROFILE: "profile",
   RESET_PASSWORD: "reset-password",
-};
-
-export const TITLES = {
-  [VIEWS.MAIN]: "",
-  [VIEWS.SIGN_IN]: "Sign In",
-  [VIEWS.SIGN_UP]: "Sign Up",
-  [VIEWS.PROFILE]: "Profile",
-  [VIEWS.RESET_PASSWORD]: "Reset Password",
 };
 
 export const PATHS = {
