@@ -1,6 +1,6 @@
 {
   "name": "anilibria-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "proxy": "https://www.anilibria.tv",
   "scripts": {
     "start": "react-scripts start",
@@ -10,6 +10,11 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.14.15",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

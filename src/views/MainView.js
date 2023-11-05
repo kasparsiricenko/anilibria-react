@@ -1,15 +1,18 @@
 import { tss } from "tss-react/mui";
 import Organization from "../components/Organization";
 import Releases from "../components/Releases";
+import usePageTitle from "../hooks/usePageTitle";
+import { TITLES, VIEWS } from "../config";
 
 const MainView = () => {
   const { classes } = useStyles();
+  usePageTitle(TITLES[VIEWS.MAIN]);
+
   return (
-    <div className={classes.root}>
-      <h1 className={classes.title}>Main</h1>
+    <main className={classes.root}>
       <Organization />
       <Releases />
-    </div>
+    </main>
   );
 };
 
@@ -19,6 +22,8 @@ const useStyles = tss.create(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    flex: "1 0 0px",
+    width: "100%",
     "& > *": {
       margin: theme.spacing(1),
     },

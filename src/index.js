@@ -10,6 +10,13 @@ import SignInView from "./views/SignInView";
 import MainView from "./views/MainView";
 import { ThemeStateProvider } from "./contexts/useThemeState";
 import CssBaseline from "@mui/material/CssBaseline";
+import { AuthProvider } from "./contexts/useAuth";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+if (process.env.NODE_ENV === "development") {
+  console.log = () => {};
+}
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,21 +28,23 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeStateProvider>
-        <React.Fragment>
-          <CssBaseline enableColorScheme />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<MainView />} />
-              <Route path="/sign-in" element={<SignInView />} />
-              <Route path="/sign-up" element={<SignUpView />} />
-              <Route path="/profile" element={<ProfileView />} />
-            </Routes>
-          </BrowserRouter>
-        </React.Fragment>
-      </ThemeStateProvider>
-    </QueryClientProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeStateProvider>
+            <React.Fragment>
+              <CssBaseline enableColorScheme />
+              <Routes>
+                <Route path="/" element={<MainView />} />
+                <Route path="/sign-in" element={<SignInView />} />
+                <Route path="/sign-up" element={<SignUpView />} />
+                <Route path="/profile" element={<ProfileView />} />
+              </Routes>
+            </React.Fragment>
+          </ThemeStateProvider>
+        </QueryClientProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 };
 

@@ -1,7 +1,10 @@
 import { tss } from "tss-react/mui";
+import usePageTitle from "../hooks/usePageTitle";
+import { TITLES, VIEWS } from "../config";
 
 const SignUpView = () => {
   const { classes } = useStyles();
+  usePageTitle(TITLES[VIEWS.SIGN_UP]);
 
   return (
     <div className={classes.root}>
@@ -17,6 +20,8 @@ const useStyles = tss.create(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    flex: "1 0 0px",
+    width: "100%",
     "& > *": {
       margin: theme.spacing(1),
     },

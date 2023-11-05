@@ -1,29 +1,31 @@
+:root {
+  --font-oswald: "Oswald", "Noto Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+
+  --font-philosopher: "Philosopher", "Noto Sans", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  --font-noto-sans: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+
 html {
-  font-family:
-    "Oswald",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Roboto",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-oswald);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.font-noto {
-  font-family: "Noto Sans";
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
 }
 
-.font-oswald {
-  font-family: "Oswald";
-}
-
-.font-philosopher {
-  font-family: "Philosopher";
+#root {
+  display: flex;
+  flex-direction: column;
 }

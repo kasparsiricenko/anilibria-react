@@ -4,12 +4,36 @@ import React from "react";
 const lightTheme = createTheme({
   palette: {
     mode: "light",
+    primary: {
+      main: "#FFFFFF", // White color for primary
+      contrastText: "#000000",
+    },
+    secondary: {
+      main: "#333333", // Dark grey color for secondary
+      contrastText: "#FFFFFF",
+    },
+    contrastThreshold: 4.5,
+  },
+  typography: {
+    fontFamily: "var(--font-oswald)",
   },
 });
 
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
+    primary: {
+      main: "#333333", // Dark grey color for primary
+      contrastText: "#FFFFFF",
+    },
+    secondary: {
+      main: "#FFFFFF", // White color for secondary
+      contrastText: "#000000",
+    },
+    contrastThreshold: 4.5,
+  },
+  typography: {
+    fontFamily: "var(--font-oswald)",
   },
 });
 
@@ -46,7 +70,7 @@ const getThemeState = () => {
   return localStorage.getItem("themeState") || THEME_STATES.SYSTEM;
 };
 
-const ThemeStateContext = React.createContext("light");
+const ThemeStateContext = React.createContext();
 
 export const ThemeStateProvider = ({ children }) => {
   const [themeState, setThemeState] = React.useState(getThemeState);

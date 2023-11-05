@@ -1,7 +1,11 @@
 import { tss } from "tss-react/mui";
+import { TITLES, VIEWS } from "../config";
+import usePageTitle from "../hooks/usePageTitle";
 
 const ProfileView = () => {
   const { classes } = useStyles();
+  usePageTitle(TITLES[VIEWS.PROFILE]);
+
   return (
     <div className={classes.root}>
       <h1 className={classes.title}>Profile</h1>
