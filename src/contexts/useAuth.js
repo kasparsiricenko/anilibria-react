@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
         navigate("/");
       }
     }
-  }, [auth, location]);
+  }, [auth, location, navigate]);
 
   const value = React.useMemo(() => {
     return { auth, setAuth: (newAuth) => setAuth(newAuth) };

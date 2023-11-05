@@ -11,8 +11,6 @@ import MainView from "./views/MainView";
 import { ThemeStateProvider } from "./contexts/useThemeState";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AuthProvider } from "./contexts/useAuth";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 if (process.env.NODE_ENV === "development") {
   console.log = () => {};

@@ -1,11 +1,11 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconButton, InputAdornment, TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import React from "react";
 import { tss } from "tss-react/mui";
 
 const SearchField = () => {
-  const { classes, cx } = useStyles();
+  const { classes } = useStyles();
   const inputRef = React.useRef(null);
   const [value, setValue] = React.useState("");
 
