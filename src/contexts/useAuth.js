@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { NO_AUTH_PATHS } from "../config";
 
 const AuthContext = React.createContext();
 
@@ -23,18 +24,12 @@ export const AuthProvider = ({ children }) => {
   React.useEffect(() => {
     console.log(location);
     if (!auth) {
-      if (
-        location.pathname !== "/sign-in" &&
-        location.pathname !== "/sign-up"
-      ) {
+      if (!NO_AUTH_PATHS.includes(location.pathname)) {
         navigate("/sign-in");
       }
     }
     if (auth) {
-      if (
-        location.pathname === "/sign-in" ||
-        location.pathname === "/sign-up"
-      ) {
+      if (NO_AUTH_PATHS.includes(location.pathname)) {
         navigate("/");
       }
     }

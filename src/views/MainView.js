@@ -2,7 +2,7 @@ import { tss } from "tss-react/mui";
 import Organization from "../components/Organization";
 import Releases from "../components/Releases";
 import usePageTitle from "../hooks/usePageTitle";
-import { TITLES, VIEWS } from "../config";
+import { VIEWS } from "../config";
 
 const MainView = () => {
   const { classes } = useStyles();

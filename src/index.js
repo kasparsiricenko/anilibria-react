@@ -12,6 +12,8 @@ import { ThemeStateProvider } from "./contexts/useThemeState";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AuthProvider } from "./contexts/useAuth";
 import { IntlProvider } from "react-intl";
+import { PATHS, VIEWS } from "./config";
+import ResetPasswordView from "./views/ResetPasswordView";
 
 if (process.env.NODE_ENV !== "development") {
   console.log = () => {};
@@ -44,10 +46,14 @@ const Root = () => {
             <React.Fragment>
               <CssBaseline enableColorScheme />
               <Routes>
-                <Route path="/" element={<MainView />} />
-                <Route path="/sign-in" element={<SignInView />} />
-                <Route path="/sign-up" element={<SignUpView />} />
-                <Route path="/profile" element={<ProfileView />} />
+                <Route path={PATHS[VIEWS.MAIN]} element={<MainView />} />
+                <Route path={PATHS[VIEWS.SIGN_IN]} element={<SignInView />} />
+                <Route path={PATHS[VIEWS.SIGN_UP]} element={<SignUpView />} />
+                <Route
+                  path={PATHS[VIEWS.RESET_PASSWORD]}
+                  element={<ResetPasswordView />}
+                />
+                <Route path={PATHS[VIEWS.PROFILE]} element={<ProfileView />} />
               </Routes>
             </React.Fragment>
           </ThemeStateProvider>

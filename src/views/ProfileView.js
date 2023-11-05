@@ -1,5 +1,5 @@
 import { tss } from "tss-react/mui";
-import { TITLES, VIEWS } from "../config";
+import { VIEWS } from "../config";
 import usePageTitle from "../hooks/usePageTitle";
 
 const ProfileView = () => {

@@ -1,6 +1,6 @@
 import { tss } from "tss-react/mui";
 import usePageTitle from "../hooks/usePageTitle";
-import { TITLES, VIEWS } from "../config";
+import { VIEWS } from "../config";
 
 const SignUpView = () => {
   const { classes } = useStyles();

@@ -27,6 +27,7 @@ const Header = ({
             color="inherit"
             aria-label="Go back"
             onClick={onGoBack}
+            className={classes.backButton}
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </IconButton>
@@ -45,10 +46,17 @@ const Header = ({
   );
 };
 
-const useStyles = tss.create({
+const useStyles = tss.create(({ theme }) => ({
   root: {
     boxShadow: "none",
   },
-});
+  backButton: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
+  logo: {
+    height: "1.5rem",
+  },
+}));
 
 export default Header;

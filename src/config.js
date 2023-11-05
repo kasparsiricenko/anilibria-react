@@ -26,3 +26,9 @@ export const PATHS = {
   [VIEWS.PROFILE]: "/profile",
   [VIEWS.RESET_PASSWORD]: "/reset-password",
 };
+
+export const NO_AUTH_PATHS = [
+  PATHS[VIEWS.SIGN_IN],
+  PATHS[VIEWS.SIGN_UP],
+  PATHS[VIEWS.RESET_PASSWORD],
+];

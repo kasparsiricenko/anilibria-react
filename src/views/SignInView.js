@@ -4,7 +4,7 @@ import React from "react";
 import { tss } from "tss-react/mui";
 import useAuth from "../contexts/useAuth";
 import usePageTitle from "../hooks/usePageTitle";
-import { TITLES, VIEWS } from "../config";
+import { PATHS, VIEWS } from "../config";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -60,7 +60,7 @@ const SignInView = () => {
       <Header hasBackButton={false} hasSearchField={false} hasProfile={false} />
       <Container component="main" maxWidth="xl" className={classes.root}>
         <Container maxWidth="xs">
-          <h1 className={classes.title}>
+          <h1>
             <FormattedMessage id="sign-in" />
           </h1>
           <form onSubmit={onSubmit}>
@@ -99,7 +99,7 @@ const SignInView = () => {
               }}
             />
             <p className={classes.paragraph}>
-              <RouterLink to="/sign-up" replace>
+              <RouterLink to={PATHS[VIEWS.RESET_PASSWORD]} replace>
                 <MuiLink
                   component="span"
                   underline="always"
@@ -121,7 +121,7 @@ const SignInView = () => {
               className={cx(classes.paragraph, classes.createAccountParagraph)}
             >
               <FormattedMessage id="dont-have-account" />
-              <RouterLink to="/sign-up" replace>
+              <RouterLink to={PATHS[VIEWS.SIGN_UP]} replace>
                 <MuiLink
                   component="span"
                   underline="always"
@@ -145,12 +145,6 @@ const useStyles = tss.create(({ theme }) => ({
     flexDirection: "column",
     width: "100%",
     flex: "1 0 0px",
-  },
-  header: {
-    height: theme.typography.pxToRem(44),
-  },
-  title: {
-    fontFamily: "var(--font-oswald)",
   },
   paragraph: {
     margin: 0,
